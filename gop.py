@@ -180,27 +180,27 @@ print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦
 sleep(0.2)
 chon = int(input('\033[1;33mnhn\033[1;95m@\033[1;36mBNamxHNam$ '))
 if chon == 1 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/tds.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tds.py').text)
 elif chon == 2 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/ttc.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/ttc.py').text)
 elif chon == 3 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/tienichfb.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tienichfb.py').text)
 elif chon == 4 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/tiktok.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tiktok.py').text)
 elif chon == 5 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/golike.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/golike.py').text)
 elif chon == 6 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/encode.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/encode.py').text)
 elif chon == 7 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/encode.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/spamsms.py').text)
 elif chon == 8 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/ddos.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/ddos.py').text)
 elif chon == 9 :
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/mail.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/mail.py').text)
 elif chon == 10:
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/proxy.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/proxy.py').text)
 elif chon == 11:
-	exec(requests.get('https://raw.githubusercontent.com/namnguyen131/bnamxhnamgop/main/tienich.py').text)
+	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tienich.py').text)
 elif chon == 00 :
 	print(f"{lam}Hẹn Gặp Lại")
 else :
