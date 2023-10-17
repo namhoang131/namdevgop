@@ -79,12 +79,7 @@ from pystyle import *
 from time import strftime
 from datetime import datetime, timedelta
 now=datetime.now()
-os.system("cls" if os.name == "nt" else "clear")
-loag = (f'{do}➩ {trang}Đang Xử Lý....')
-for x in loag:
-  sys.stdout.write(x)
-  sys.stdout.flush()
-  sleep(0.090)
+System.Clear()
 os.system('espeak -a 300 "Have a nice day"')
 logo = f"""
 
