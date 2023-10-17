@@ -80,7 +80,6 @@ from time import strftime
 from datetime import datetime, timedelta
 now=datetime.now()
 System.Clear()
-os.system('espeak -a 300 "Have a nice day"')
 logo = f"""
 
 ██╗  ██╗ █████╗ ██╗   ██╗███████╗   █████╗   ███╗  ██╗██╗ █████╗ ███████╗  ██████╗  █████╗ ██╗   ██╗
