@@ -85,6 +85,7 @@ for x in loag:
   sys.stdout.write(x)
   sys.stdout.flush()
   sleep(0.090)
+def banner():
 banner=f"""
 \033[1;31m┌══════════════════════════════════════════════════════════════════════════════┐
             \033[1;31m███╗   ██╗ █████╗ ███╗   ███╗    ██████  ███████╗██╗   ██╗          
@@ -103,6 +104,7 @@ for X in banner:
   sys.stdout.write(X)
   sys.stdout.flush() 
   sleep(0)
+print(banner)
 print(f"{trang} ➩ Ngày{trang} : {do}{ngay_hom_nay}{vang} |{luc} Tháng{trang}: {do}{thang_nay} {vang}| {luc}Năm{trang}: {do}{nam_}{vang} | {luc}Thời Gian: {do}{time}")
 print(f'{trang} ➩ IP Hiện Tại Của Bạn : {vang}{ip}')
 print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
