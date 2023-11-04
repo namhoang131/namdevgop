@@ -79,14 +79,8 @@ from pystyle import *
 from time import strftime
 from datetime import datetime, timedelta
 now=datetime.now()
-os.system("cls" if os.name == "nt" else "clear")
-loag = (f'{do}➩ {trang}Đang Kiểm Tra Kết Nối Wifi....\n')
-for x in loag:
-  sys.stdout.write(x)
-  sys.stdout.flush()
-  sleep(0.090)
-def banner():
-	banner=f"""
+System.Clear()
+print(f"""
 \033[1;31m┌══════════════════════════════════════════════════════════════════════════════┐
             \033[1;31m███╗   ██╗ █████╗ ███╗   ███╗    ██████  ███████╗██╗   ██╗          
             \033[1;32m████╗  ██║██╔══██╗████╗ ████║    ██╔══██╗██╔════╝██║   ██║          
@@ -99,12 +93,7 @@ def banner():
 \033[1;36m ➯ Nhóm Zalo  : https://zalo.me/g/pdsvkf650                                                
 \033[1;33m ➯ Facebook: facebook.com/nam.nhn131                                
 \033[1;34m└══════════════════════════════════════════════════════════════════════════════┘
-"""
-for X in banner:
-  sys.stdout.write(X)
-  sys.stdout.flush() 
-  sleep(0)
-print(banner)
+""")
 print(f"{trang} ➩ Ngày{trang} : {do}{ngay_hom_nay}{vang} |{luc} Tháng{trang}: {do}{thang_nay} {vang}| {luc}Năm{trang}: {do}{nam_}{vang} | {luc}Thời Gian: {do}{time}")
 print(f'{trang} ➩ IP Hiện Tại Của Bạn : {vang}{ip}')
 print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
