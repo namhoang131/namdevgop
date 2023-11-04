@@ -218,4 +218,4 @@ if chon == 11:
 if chon == 00 :
 	print(f"{lam}Hẹn Gặp Lại")
 else :
-	exec(requests.get("https://raw.githubusercontent.com/namhoang131/namdevgop/main/gop2.py").text)
+	exec(requests.get("https://raw.githubusercontent.com/namhoang131/namdevgop/main/gop.py").text)
