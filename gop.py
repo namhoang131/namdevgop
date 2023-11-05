@@ -79,13 +79,7 @@ from pystyle import *
 from time import strftime
 from datetime import datetime, timedelta
 now=datetime.now()
-os.system("cls" if os.name == "nt" else "clear")
-loag = (f'{do}➩ {trang}Đang Kiểm Tra Kết Nối Wifi....\n')
-for x in loag:
-  sys.stdout.write(x)
-  sys.stdout.flush()
-  sleep(0.090)
-os.system('espeak -a 300 "Have a nice day"')
+System.Clear()
 logo = f"""
 
 ██╗  ██╗ █████╗ ██╗   ██╗███████╗   █████╗   ███╗  ██╗██╗ █████╗ ███████╗  ██████╗  █████╗ ██╗   ██╗
@@ -97,6 +91,11 @@ logo = f"""
 									
 									Ấn Enter Để Vào Tool
 									
+
+
+
+
+
 
 """
 Anime.Fade(Center.Center(logo), Colors.red_to_yellow, Colorate.Vertical, enter=True)
@@ -141,7 +140,7 @@ print("\033[1;35m║ \033[1;31m[\033[1;33m</>\033[1;31m]\033[1;36m[4] \033[1;32m
 print("\033[1;35m╚═══════════════════════════════════════╝")
 sleep(0.2)
 print("\033[1;35m╔═══════════════════════════════════════╗")
-print("\033[1;35m║ \033[1;31m[\033[1;33m</>\033[1;31m]\033[1;36m[5] \033[1;32mVÀO TOOL GOLIKE		   \033[1;35m║ ")
+print("\033[1;35m║ \033[1;31m[\033[1;33m</>\033[1;31m]\033[1;36m[5] \033[1;32mVÀO TOOL GOLIKE		\033[1;35m║ ")
 print("\033[1;35m╚═══════════════════════════════════════╝")
 sleep(0.2)
 print("\033[1;35m╔═══════════════════════════════════════╗")
@@ -173,7 +172,7 @@ print("\033[1;35m║ \033[1;31m[\033[1;33m</>\033[1;31m]\033[1;36m[00] \033[1;32
 print("\033[1;35m╚═══════════════════════════════════════╝")
 print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
 sleep(0.2)
-chon = input("\033[1;33mnhn\033[1;95m@\033[1;36mNamDev$ ")
+chon = int(input('\033[1;33mnhn\033[1;95m@\033[1;36mBNamxHNam$ '))
 if chon == 1 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tds.py').text)
 elif chon == 2 :
@@ -199,4 +198,4 @@ elif chon == 11:
 elif chon == 00 :
 	print(f"{lam}Hẹn Gặp Lại")
 else :
-	sys.exit('Vui Lòng Nhập Đúng Chế Độ!!')
+	sys.exit('Vui Lòng Chọn Đúng Chế Độ!')
