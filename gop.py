@@ -172,7 +172,7 @@ print("\033[1;35m║ \033[1;31m[\033[1;33m</>\033[1;31m]\033[1;36m[00] \033[1;32
 print("\033[1;35m╚═══════════════════════════════════════╝")
 print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
 sleep(0.2)
-chon = int(input('\033[1;33mnhn\033[1;95m@\033[1;36mBNamxHNam$ '))
+chon = int(input('\033[1;33mnhn\033[1;95m@\033[1;36mNamDev$ '))
 if chon == 1 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tds.py').text)
 elif chon == 2 :
