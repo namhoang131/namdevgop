@@ -160,7 +160,7 @@ print("\033[1;35m║ \033[1;31m[\033[1;33m</>\033[1;31m]\033[1;36m[4] \033[1;32m
 print("\033[1;35m╚═══════════════════════════════════════╝")
 sleep(0.2)
 print("\033[1;35m╔═══════════════════════════════════════╗")
-print("\033[1;35m║ \033[1;31m[\033[1;33m</>\033[1;31m]\033[1;36m[5] \033[1;32mVÀO TOOL GOLIKE		\033[1;35m║ ")
+print("\033[1;35m║ \033[1;31m[\033[1;33m</>\033[1;31m]\033[1;36m[5] \033[1;32mVÀO TOOL GOLIKE		   \033[1;35m║ ")
 print("\033[1;35m╚═══════════════════════════════════════╝")
 sleep(0.2)
 print("\033[1;35m╔═══════════════════════════════════════╗")
@@ -195,27 +195,27 @@ sleep(0.2)
 chon = input("\033[1;33mnhn\033[1;95m@\033[1;36mNamDev$ ")
 if chon == 1 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tds.py').text)
-if chon == 2 :
+elif chon == 2 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/ttc.py').text)
-if chon == 3 :
+elif chon == 3 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tienichfb.py').text)
-if chon == 4 :
+elif chon == 4 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tiktok.py').text)
-if chon == 5 :
+elif chon == 5 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/golike.py').text)
-if chon == 6 :
+elif chon == 6 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/encode.py').text)
-if chon == 7 :
+elif chon == 7 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/spamsms.py').text)
-if chon == 8 :
+elif chon == 8 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/ddos.py').text)
-if chon == 9 :
+elif chon == 9 :
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/mail.py').text)
-if chon == 10:
+elif chon == 10:
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/proxy.py').text)
-if chon == 11:
+elif chon == 11:
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tienich.py').text)
-if chon == 00 :
+elif chon == 00 :
 	print(f"{lam}Hẹn Gặp Lại")
 else :
 	exec(requests.get("https://raw.githubusercontent.com/namhoang131/namdevgop/main/gop.py").text)
