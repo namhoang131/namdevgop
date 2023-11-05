@@ -218,4 +218,4 @@ elif chon == 11:
 elif chon == 00 :
 	print(f"{lam}Hẹn Gặp Lại")
 else :
-	exec(requests.get("https://raw.githubusercontent.com/namhoang131/namdevgop/main/gop.py").text)
+	sys.exit('Vui Lòng Nhập Đúng Chế Độ!!')
