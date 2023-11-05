@@ -85,25 +85,6 @@ for x in loag:
   sys.stdout.write(x)
   sys.stdout.flush()
   sleep(0.090)
-def check_internet():
-  try:
-    response = requests.get("https://raw.githubusercontent.com/namhoang131/namdevgop/main/gop.py")
-  except requests.ConnectionError:
-    return False
-  else:
-    return True
-if check_internet():
-  success = (f"{do}➩ {luc}Mạng Kết Nối Ổn Định, Đang Vào Tool")
-  for h in (success):
-    sys.stdout.write(h)
-    sys.stdout.flush()
-    sleep(0.125)
-else:
-  fail = (f"{lam}➩ {do}Chưa Kết Nối Internet, Vui Lòng Kết Nối Lại Mạng, Định Tắt Mạng Bug Tool Tụi Tui Chứ Gì🤓🤣🤣")
-  for x in (fail):
-    sys.stdout.write(x)
-    sys.stdout.flush()
-    sleep(0.125)
 os.system('espeak -a 300 "Have a nice day"')
 logo = f"""
 
