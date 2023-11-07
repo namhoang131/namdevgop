@@ -124,7 +124,23 @@ def get_weather():
     except Exception as e:
         print(f"Lỗi: {e}")
         return None
+def get_wifi_info():
+    wifi = pywifi.PyWiFi()
+    iface = wifi.interfaces()[0]  # Lấy giao diện WiFi đầu tiên
 
+    iface.scan()  # Quét mạng WiFi
+    scan_results = iface.scan_results()
+
+    if len(scan_results) == 0:
+        return "Không có mạng WiFi nào được tìm thấy", None
+
+    wifi_info = scan_results[0]
+    ssid = wifi_info.ssid
+    bssid = wifi_info.bssid
+
+    return ssid, bssid
+if __name__ == "__main__":
+    ssid, bssid = get_wifi_info()
 weather_description = get_weather()
 System.Clear()
 banner=f"""
@@ -145,8 +161,9 @@ for X in banner:
   sys.stdout.write(X)
   sys.stdout.flush() 
   sleep(0)
-print(f"{trang} ➩ Ngày{trang} : {vang}{ngay_hom_nay}{lam} |{trang} Tháng{trang}: {vang}{thang_nay} {lam}| {trang}Năm{trang}: {vang}{nam_}{lam} | {trang}Thời Gian: {vang}{time}")
-print(f'{trang} ➩ Thành Phố : {vang}{city} {lam}|{trang} Khu Vực: {vang}{region} {lam}| {trang} Quốc gia: {vang}{country} {lam}| {trang} Tọa độ: {vang}{latitude}, {longitude} {lam}| {trang} Nhiệt độ: {vang}{weather_description}')
+print(f"{do} ➩ {trang}Ngày{trang} : {vang}{ngay_hom_nay}{lam} |{trang} Tháng{trang}: {vang}{thang_nay} {lam}| {trang}Năm{trang}: {vang}{nam_}{lam} | {trang}Thời Gian: {vang}{time}")
+print(f"{do} ➩ {trang}Thành Phố : {vang}{city} {lam}|{trang} Khu Vực: {vang}{region} {lam}| {trang} Quốc gia: {vang}{country} {lam}| {trang} Tọa độ: {vang}{latitude}, {longitude} {lam}| {trang} Nhiệt độ: {vang}{weather_description}")
+print(f"{do} ➩ {trang}Tên Mạng : {vang}{ssid} {lam}| {trang}Địa Chỉ MAC : {vang}{bssid}")
 print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
 print(f"""{do}[{vang}</>{do}]LƯU Ý:{trang}Tool Riêng Của Nam Dev """)
 print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
