@@ -36,7 +36,7 @@ from pystyle import Write,Colors
 from bs4 import BeautifulSoup
 import socket
 from datetime import datetime
-time=datetime.now().strftime("%H:%M:%S%p")
+time=datetime.now().strftime("%H:%M:%S %p")
 from pystyle import *
 data_machine = []
 today = date.today()
@@ -79,47 +79,74 @@ from pystyle import *
 from time import strftime
 from datetime import datetime, timedelta
 now=datetime.now()
+def check_internet_connection():
+    try:
+        response = requests.get("http://www.google.com", timeout=5)
+        return True
+    except requests.ConnectionError:
+        return False
+
+# Kiểm tra kết nối internet
+if check_internet_connection():
+    print(f"{luc}Vui Lòng Chờ!!!")
+    sleep(0.1)
+else:
+    print(f"{do}Vui Lòng Kiểm Tra Kết NốI!!!")
+    sys.exit()
+def get_location_by_ip():
+    try:
+        response = requests.get("https://ipinfo.io")
+        data = response.json()
+
+        city = data.get("city")
+        region = data.get("region")
+        country = data.get("country")
+        loc = data.get("loc").split(",")
+        latitude, longitude = loc if len(loc) == 2 else (None, None)
+
+        return city, region, country, latitude, longitude
+    except Exception as e:
+        print(f"Lỗi: {e}")
+        return None, None, None, None, None
+city, region, country, latitude, longitude = get_location_by_ip()
+def get_weather():
+    try:
+        # Lấy thông tin vị trí từ dịch vụ ipinfo.io
+        response = requests.get("https://ipinfo.io")
+        data = response.json()
+        location = data.get("loc").split(",")
+        latitude, longitude = location
+        # Lấy thông tin thời tiết từ trang web công cộng
+        base_url = f"https://wttr.in/{latitude},{longitude}?format=%t"
+        response = requests.get(base_url)
+        weather_description = response.text.strip()
+        return weather_description
+    except Exception as e:
+        print(f"Lỗi: {e}")
+        return None
+
+weather_description = get_weather()
 System.Clear()
-logo = f"""
-
-██╗  ██╗ █████╗ ██╗   ██╗███████╗   █████╗   ███╗  ██╗██╗ █████╗ ███████╗  ██████╗  █████╗ ██╗   ██╗
-██║  ██║██╔══██╗██║   ██║██╔════╝  ██╔══██╗  ████╗ ██║██║██╔══██╗██╔════╝  ██╔══██╗██╔══██╗╚██╗ ██╔╝
-███████║███████║╚██╗ ██╔╝█████╗    ███████║  ██╔██╗██║██║██║  ╚═╝█████╗    ██║  ██║███████║ ╚████╔╝
-██╔══██║██╔══██║ ╚████╔╝ ██╔══╝    ██╔══██║  ██║╚████║██║██║  ██╗██╔══╝    ██║  ██║██╔══██║  ╚██╔╝
-██║  ██║██║  ██║  ╚██╔╝  ███████╗  ██║  ██║  ██║ ╚███║██║╚█████╔╝███████╗  ██████╔╝██║  ██║   ██║
-╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝  ╚═╝  ╚═╝  ╚═╝  ╚══╝╚═╝ ╚════╝ ╚══════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝	
-									
-									Ấn Enter Để Vào Tool
-									
-
-
-
-
-
-
-"""
-Anime.Fade(Center.Center(logo), Colors.red_to_yellow, Colorate.Vertical, enter=True)
-sleep(0)
 banner=f"""
-\033[1;31m┌══════════════════════════════════════════════════════════════════════════════┐
-            \033[1;31m███╗   ██╗ █████╗ ███╗   ███╗    ██████  ███████╗██╗   ██╗          
-            \033[1;32m████╗  ██║██╔══██╗████╗ ████║    ██╔══██╗██╔════╝██║   ██║          
-            \033[1;33m██╔██╗ ██║███████║██╔████╔██║    ██║  ██║█████╗  ╚██╗ ██╔╝          
-            \033[1;34m██║╚██╗██║██╔══██║██║╚██╔╝██║    ██║  ██║██╔══╝   ╚████╔╝           
-            \033[1;35m██║ ╚████║██║  ██║██║ ╚═╝ ██║    ██████╔╝███████╗  ╚██╔╝            
-            \033[1;36m╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚═╝    ╚═════╝ ╚══════╝   ╚═╝   
-\033[1;34m┠══════════════════════════════════════════════════════════════════════════════┨
+\033[1;31m┌════════════════════════════════════════════════════════┐
+\033[1;31m███╗   ██╗ █████╗ ███╗   ███╗    ██████  ███████╗██╗   ██╗          
+\033[1;32m████╗  ██║██╔══██╗████╗ ████║    ██╔══██╗██╔════╝██║   ██║          
+\033[1;33m██╔██╗ ██║███████║██╔████╔██║    ██║  ██║█████╗  ╚██╗ ██╔╝          
+\033[1;34m██║╚██╗██║██╔══██║██║╚██╔╝██║    ██║  ██║██╔══╝   ╚████╔╝           
+\033[1;35m██║ ╚████║██║  ██║██║ ╚═╝ ██║    ██████╔╝███████╗  ╚██╔╝            
+\033[1;36m╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚═╝    ╚═════╝ ╚══════╝   ╚═╝   
+\033[1;34m┠════════════════════════════════════════════════════════┨
 \033[1;32m ➯ Cre   : Nguyễn Hoàng Nam                                         
 \033[1;36m ➯ Nhóm Zalo  : https://zalo.me/g/pdsvkf650                                                
 \033[1;33m ➯ Facebook: facebook.com/nam.nhn131                                
-\033[1;34m└══════════════════════════════════════════════════════════════════════════════┘
+\033[1;34m└════════════════════════════════════════════════════════┘
 """
 for X in banner:
   sys.stdout.write(X)
   sys.stdout.flush() 
   sleep(0)
-print(f"{trang} ➩ Ngày{trang} : {do}{ngay_hom_nay}{vang} |{luc} Tháng{trang}: {do}{thang_nay} {vang}| {luc}Năm{trang}: {do}{nam_}{vang} | {luc}Thời Gian: {do}{time}")
-print(f'{trang} ➩ IP Hiện Tại Của Bạn : {vang}{ip}')
+print(f"{trang} ➩ Ngày{trang} : {vang}{ngay_hom_nay}{lam} |{trang} Tháng{trang}: {vang}{thang_nay} {lam}| {trang}Năm{trang}: {vang}{nam_}{lam} | {trang}Thời Gian: {vang}{time}")
+print(f'{trang} ➩ Thành Phố : {vang}{city} {lam}|{trang} Khu Vực: {vang}{region} {lam}| {trang} Quốc gia: {vang}{country} {lam}| {trang} Tọa độ: {vang}{latitude}, {longitude} {lam}| {trang} Nhiệt độ: {vang}{weather_description}')
 print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
 print(f"""{do}[{vang}</>{do}]LƯU Ý:{trang}Tool Riêng Của Nam Dev """)
 print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
@@ -196,6 +223,6 @@ elif chon == 10:
 elif chon == 11:
 	exec(requests.get('https://raw.githubusercontent.com/namhoang131/namdev1/main/tienich.py').text)
 elif chon == 00 :
-	print(f"{lam}Hẹn Gặp Lại")
+	print(f"{lam}Cảm Ơn Bạn Đã Dùng Tool Của {vang}Nguyễn Hoàng Nam")
 else :
 	sys.exit('Vui Lòng Chọn Đúng Chế Độ!')
